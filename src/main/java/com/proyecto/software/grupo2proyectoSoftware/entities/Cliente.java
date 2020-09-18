@@ -8,7 +8,7 @@ import javax.persistence.InheritanceType;
 
 
 
-@Entity
+@Entity  //////////Se crea la entidad con este nombre en la base de datos.
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Cliente  extends Persona{
 	
