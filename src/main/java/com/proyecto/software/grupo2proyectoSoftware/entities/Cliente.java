@@ -2,6 +2,14 @@ package com.proyecto.software.grupo2proyectoSoftware.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Cliente  extends Persona{
 	
 	private long cuil;
