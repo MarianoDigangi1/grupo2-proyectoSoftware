@@ -6,7 +6,7 @@ import com.proyecto.software.grupo2proyectoSoftware.entities.Persona;
 
 
 
-public interface PersonaRepositories  extends JpaRepository <Persona, Integer>{
+public interface PersonaRepositories  extends JpaRepository <Persona, Integer>{ //pruebaaaa borrar
 
 	
 
