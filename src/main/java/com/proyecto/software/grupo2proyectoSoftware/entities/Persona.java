@@ -13,8 +13,13 @@ import javax.persistence.InheritanceType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+<<<<<<< HEAD
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // Muesta a los hijos los atributos que tiene
+=======
+@Entity   //////////Se crea la entidad con este nombre en la base de datos.
+@Inheritance(strategy = InheritanceType.JOINED)
+>>>>>>> 26ab1b4de8b6fd6d44b3f7aa8fd1f6b5f87b014a
 public class Persona {
 	
 	@Id
