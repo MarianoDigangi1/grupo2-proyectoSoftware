@@ -14,9 +14,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED) ///Se trata de la herencia con los hijos. Todo lo del padre aparecera en los hijos
 
+
+
+@Entity   //////////Se crea la entidad con este nombre en la base de datos.
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
 	
 	@Id
