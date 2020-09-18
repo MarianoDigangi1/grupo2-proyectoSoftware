@@ -14,7 +14,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) ///herenciaaaaa
+@Inheritance(strategy = InheritanceType.JOINED) ///Se trata de la herencia con los hijos
 public class Persona {
 	
 	@Id
