@@ -14,9 +14,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 
-
-
-
 @Entity   //////////Se crea la entidad con este nombre en la base de datos.
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
