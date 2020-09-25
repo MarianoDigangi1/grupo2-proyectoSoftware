@@ -9,15 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "venta")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) /*????????????*/
 public class Venta {
 	
 	@Id
@@ -25,14 +22,16 @@ public class Venta {
 	@Column(name = "idVenta")
 	private int idVenta;
 	
-	//private Pedido pedido;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Pedido pedido;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "clienteid" , referencedColumnName = "id" )
+	@JoinColumn(name = "clienteid" , referencedColumnName = "idPersona" )
 	private Cliente cliente;
 	
-	@JoinColumn(name = "idvendero", referencedColumnName = "id")
+	@JoinColumn(name = "idvendedor", referencedColumnName = "idPersona")
 	private Vendedor vendedor;
+	
 	private LocalDate fecha;
 	private LocalTime hora;
 	private double montoTotal;
@@ -97,6 +96,5 @@ public class Venta {
 	public void setMontoTotal(double montoTotal) {
 		this.montoTotal = montoTotal;
 	}
-	
-	
+
 }
