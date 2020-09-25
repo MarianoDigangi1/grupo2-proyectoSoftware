@@ -1,37 +1,19 @@
-package com.proyecto.software.grupo2proyectoSoftware.entities;
+package com.proyecto.software.grupo2proyectoSoftware.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class DomicilioModel {
 
-@Entity
-@Table(name = "domicilio")
-public class Domicilio {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idDomicilio")
 	private int idDomicilio;
-	@Column(name = "calle")
 	private String calle;
-	@Column(name = "numero")
 	private int numero;
-	@Column(name = "ciudad")
 	private String ciudad;
-	@Column(name = "provincia")
 	private String provincia;
-	@Column(name = "codigoPostal")
 	private int codigoPostal;
 
-	public Domicilio() {
-
+	public DomicilioModel() {
 	}
 
-	public Domicilio(int idDomicilio, String calle, int numero, String ciudad, String provincia, int codigoPostal) {
-		super();
+	public DomicilioModel(int idDomicilio, String calle, int numero, String ciudad, String provincia,
+			int codigoPostal) {
 		this.idDomicilio = idDomicilio;
 		this.calle = calle;
 		this.numero = numero;
@@ -87,5 +69,7 @@ public class Domicilio {
 	public void setCodigoPostal(int codigoPostal) {
 		this.codigoPostal = codigoPostal;
 	}
+	
+	
 
 }

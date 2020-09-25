@@ -1,29 +1,16 @@
-package com.proyecto.software.grupo2proyectoSoftware.entities;
+package com.proyecto.software.grupo2proyectoSoftware.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class TablaParametrizableModel {
 
-@Entity
-public class TablaParametrizable {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idTabla")
 	private int idTabla;
-	
-	@Column(name = "pesoEmbalaje")
 	private double pesoEmbalaje;
-	
-	@Column(name = "monto")
 	private double monto;
 
-	public TablaParametrizable() {
+	public TablaParametrizableModel() {
 	}
-	
-	public TablaParametrizable(int idTabla, double pesoEmbalaje, double monto) {
+
+	public TablaParametrizableModel(int idTabla, double pesoEmbalaje, double monto) {
+		super();
 		this.idTabla = idTabla;
 		this.pesoEmbalaje = pesoEmbalaje;
 		this.monto = monto;
@@ -52,6 +39,4 @@ public class TablaParametrizable {
 	public void setMonto(double monto) {
 		this.monto = monto;
 	}
-	
-	
 }

@@ -1,6 +1,5 @@
 package com.proyecto.software.grupo2proyectoSoftware.entities;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
+@Table(name = "table")
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,9 +24,9 @@ public class Producto {
 	private String descripcionLarga;
 	@Column(name = "precioUnitario")
 	private double precioUnitario;
-	@Column(name = "categoria") ////////////////////////////////////////////////
+	@Column(name = "categoria") 
 	private Categoria categoria;
-	@Column(name = "variante") /////////////////////////////////////////////
+	@Column(name = "variante") 
 	private Variante variante;
 	@Column(name = "ls")
 	private List<Comentario>lstCom;
@@ -110,8 +112,5 @@ public class Producto {
 	public void setLstCom(List<Comentario> lstCom) {
 		this.lstCom = lstCom;
 	}
-=======
-public class Producto {
 
->>>>>>> 4f47598fb6c9a062f7e10a7133c3bb939272ed20
 }

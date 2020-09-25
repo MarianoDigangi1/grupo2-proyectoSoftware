@@ -1,54 +1,28 @@
-package com.proyecto.software.grupo2proyectoSoftware.entities;
+package com.proyecto.software.grupo2proyectoSoftware.models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
-@Entity   //////////Se crea la entidad con este nombre en la base de datos.
-@Table(name = "persona")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Persona {
-	
-	@Id
-	@Column(name = "idPersona")
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //INCREMENTA EL ID AUTOMATICAMENTE EN LA BD.
+public class PersonaModel {
+
 	private int idPersona;
-	@Column(name = "nombre")
 	private String nombre;
-	@Column(name = "apellido")
 	private String apellido;
-	@Column(name = "dni")
 	private long dni;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate FechaNacimiento;
 	private String password;
 	private String username;
-	//private Domicilio domicilio;
-	
-	@CreationTimestamp
-	private LocalDateTime createdAt;
-	
-	@UpdateTimestamp
-	private LocalDateTime updatedAt;
-	
-	public Persona() {
-		
+	private DomicilioModel domicilioModel;
+
+	public PersonaModel() {
+		super();
 	}
 
-	public Persona(int idPersona, String nombre, String apellido, long dni, LocalDate fechaNacimiento, String password,
-			String username ) {
-		super();
+	public PersonaModel(int idPersona, String nombre, String apellido, long dni, LocalDate fechaNacimiento,
+			String password, String username, DomicilioModel domicilioModel) {
 		this.idPersona = idPersona;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -56,76 +30,71 @@ public class Persona {
 		FechaNacimiento = fechaNacimiento;
 		this.password = password;
 		this.username = username;
+		this.domicilioModel = domicilioModel;
 	}
-
 
 	public int getIdPersona() {
 		return idPersona;
 	}
 
-
 	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;
 	}
-
 
 	public String getNombre() {
 		return nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	public String getApellido() {
 		return apellido;
 	}
 
-
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-
 
 	public long getDni() {
 		return dni;
 	}
 
-
 	public void setDni(long dni) {
 		this.dni = dni;
 	}
-
 
 	public LocalDate getFechaNacimiento() {
 		return FechaNacimiento;
 	}
 
-
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		FechaNacimiento = fechaNacimiento;
 	}
-
 
 	public String getPassword() {
 		return password;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 	public String getUsername() {
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
+	public DomicilioModel getDomicilioModel() {
+		return domicilioModel;
 	}
+
+	public void setDomicilioModel(DomicilioModel domicilioModel) {
+		this.domicilioModel = domicilioModel;
+	}
+
+}

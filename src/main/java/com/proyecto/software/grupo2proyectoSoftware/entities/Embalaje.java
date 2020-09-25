@@ -5,29 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "embalaje")
 public class Embalaje {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idEmbalaje")
 	private int idEmbalaje;
-	
 	@Column(name = "ancho")
 	private double ancho;
-	
 	@Column(name = "alto")
 	private double alto;
-	
 	@Column(name = "profundidad")
 	private double profundidad;
 
-	
 	public Embalaje() {
-		
+
 	}
-	
+
 	public Embalaje(int idEmbalaje, double ancho, double alto, double profundidad) {
 		this.idEmbalaje = idEmbalaje;
 		this.ancho = ancho;
@@ -66,6 +64,5 @@ public class Embalaje {
 	public void setProfundidad(double profundidad) {
 		this.profundidad = profundidad;
 	}
-	
 	
 }
