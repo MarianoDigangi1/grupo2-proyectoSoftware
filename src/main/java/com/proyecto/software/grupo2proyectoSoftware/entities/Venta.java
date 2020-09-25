@@ -22,7 +22,8 @@ public class Venta {
 	@Column(name = "idVenta")
 	private int idVenta;
 	
-	//private Pedido pedido;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Pedido pedido;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "clienteid" , referencedColumnName = "idPersona" )

@@ -3,8 +3,6 @@ package com.proyecto.software.grupo2proyectoSoftware.models;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class CategoriaModel {
 	
 	private int idCategoria;
