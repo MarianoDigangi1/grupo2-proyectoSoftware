@@ -1,5 +1,6 @@
 package com.proyecto.software.grupo2proyectoSoftware.entities;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import javax.persistence.Column;
@@ -109,4 +110,8 @@ public class Producto {
 	public void setLstCom(List<Comentario> lstCom) {
 		this.lstCom = lstCom;
 	}
+=======
+public class Producto {
+
+>>>>>>> 4f47598fb6c9a062f7e10a7133c3bb939272ed20
 }
