@@ -1,5 +1,6 @@
 package com.proyecto.software.grupo2proyectoSoftware.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -8,6 +9,7 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Vendedor extends Persona {
 	
+	@Column(name = "numeroLegajo")
 	private int numeroLegajo;
 
 	public Vendedor() {

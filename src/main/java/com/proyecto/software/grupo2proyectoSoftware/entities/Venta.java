@@ -16,30 +16,36 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "venta")
 public class Venta {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idVenta")
 	private int idVenta;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Pedido pedido;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "clienteid" , referencedColumnName = "idPersona" )
+	@JoinColumn(name = "clienteid", referencedColumnName = "idPersona")
 	private Cliente cliente;
-	
+
+	@OneToOne
 	@JoinColumn(name = "idvendedor", referencedColumnName = "idPersona")
 	private Vendedor vendedor;
-	
+
+	@Column
 	private LocalDate fecha;
+	
+	@Column
 	private LocalTime hora;
+	
+	@Column
 	private double montoTotal;
 
 	public Venta() {
-		
+
 	}
-	
+
 	public Venta(int idVenta, Cliente cliente, Vendedor vendedor, LocalDate fecha, LocalTime hora, double montoTotal) {
 		this.idVenta = idVenta;
 		this.cliente = cliente;

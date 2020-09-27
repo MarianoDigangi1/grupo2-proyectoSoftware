@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.proyecto.software.grupo2proyectoSoftware.entities.Categoria;
 
 
-@Repository
+@Repository("categoriaRepository")
 public interface ICategoriaRepository  extends JpaRepository <Categoria, Serializable>{
 	
 	public abstract Categoria findIdCategoria(int idCategoria);
